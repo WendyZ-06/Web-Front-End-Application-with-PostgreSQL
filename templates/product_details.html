@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Product Detail</title>
+  </head>
+  <body>
+    <h1>Product Detail</h1>
+    <table>
+      <tr>
+        <td><b>Product ID:</b></td>
+        <td>{{ product.product_id }}</td>
+      </tr>
+      <tr>
+        <td><b>Seller ID:</b></td>
+        <td>{{ product.seller_id }}</td>
+      </tr>
+      <tr>
+        <td><b>Name:</b></td>
+        <td>{{ product.name }}</td>
+      </tr>
+      <tr>
+        <td><b>Price:</b></td>
+        <td>{{ product.price }}</td>
+      </tr>
+      <tr>
+        <td><b>Status:</b></td>
+        <td>{{ product.status }}</td>
+      </tr>
+    </table>
+    <br>
+<br>
+    <h2>Reviews</h2>
+    <ul>
+      {% for review in reviews %}
+      <li>Comment: {{ review.comment }}</li>
+      <li>Rating: {{ review.rating }}</li>
+      {% endfor %}
+    </ul>
+    <br>
+    <form action="/buy/{{ product.product_id }}" method="POST">
+      <input type="submit" value="Buy">
+    </form>
+    <p><a href="search_results">Return</a></p>
+    </form>
+  </body>
+</html>
