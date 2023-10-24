@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Buy Product</title>
+  </head>
+  <body>
+    <h1>Buy Product</h1>
+    <form action="/buy/{{ product_id }}/order" method="POST">
+      <input type="hidden" name="product_id" value="{{ product_id }}">
+      <label for="buyer_id">Buyer ID:</label>
+      <input type="text" id="buyer_id" name="buyer_id" value="{{ buyer_id }}"><br><br>
+
+      <label for="seller_id">Seller ID:</label>
+      <input type="text" id="seller_id" name="seller_id" value="{{ seller_id }}"><br><br>
+
+      <label for="quantity">Quantity:</label>
+      <input type="number" id="quantity" name="quantity" min="1" required><br><br>
+
+      <label for="payment_method">Payment Method:</label>
+      <select id="payment_method" name="payment_method">
+        <option value="credit card">Credit Card</option>
+        <option value="debit card">Debit Card</option>
+        <option value="paypal">Paypal</option>
+      </select><br><br>
+      
+      <label for="payment_status">Payment Status:</label>
+      <select id="payment_status" name="payment_status">
+        <option value="unpaid">Unpaid</option>
+        <option value="pending">Pending</option>
+        <option value="paid">Paid</option>
+      </select><br><br>
+      
+      <label for="shipping_method">Shipping Method:</label>
+      <select id="shipping_method" name="shipping_method">
+        <option value="standard shipping">Standard Shipping</option>
+        <option value="express shipping">Express Shipping</option>
+      </select><br><br>
+  
+      <label for="shipping_status">Shipping Status:</label>
+      <select id="shipping_status" name="shipping_status">
+        <option value="processed">Processed</option>
+        <option value="shipped">Shipped</option>
+        <option value="delivered">Delivered</option>
+      </select><br><br>    
+      
+
+      <input type="submit" value="Buy">
+    </form>
+  </body>
+</html>
+
